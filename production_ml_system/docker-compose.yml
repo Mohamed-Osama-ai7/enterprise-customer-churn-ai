@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  churn-ai-service:
+    build: .
+    container_name: enterprise_churn_ai
+    ports:
+      - "8501:8501"
+    restart: always
+    environment:
+      - STREAMLIT_SERVER_MAX_UPLOAD_SIZE=50
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+      - ./plots:/app/plots
