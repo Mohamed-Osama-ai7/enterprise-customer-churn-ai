@@ -39,7 +39,7 @@ def load_models():
     if not os.path.exists(champ_path):
         st.error("Model artifacts missing. Please run `python train.py` first.")
         st.stop()
-        
+       # force cache update - v1.1
     champion = joblib.load(champ_path)
     stacking = joblib.load(stack_path) if os.path.exists(stack_path) else None
     return champion, stacking
