@@ -1,11 +1,11 @@
 # Enterprise Customer Churn Prediction & Retention Engine
-### Production-Grade Classical Machine Learning Platform
+### Classical Machine Learning Retention Platform
 
 ---
 
 ## 🏛️ Project Architecture & Technical Scope
 
-This repository houses an end-to-end industrial machine learning system built strictly with classical algorithms (No Deep Learning), incorporating:
+This repository houses an end-to-end machine learning system built strictly with classical algorithms (No Deep Learning), incorporating:
 
 1. **Robust Feature Preprocessing & Derived Engineering:**
    - Missing value imputation (`median` for numerical, `most_frequent` for categorical).
@@ -13,8 +13,8 @@ This repository houses an end-to-end industrial machine learning system built st
    - Leak-free OneHotEncoding encapsulated inside a strict `ColumnTransformer`.
    - Automated business metric derivations (`ChargesPerTenure`, service interaction ratios).
 
-2. **14 Classical ML Models Benchmarked:**
-   - `LogisticRegression`
+2. **13 Classical ML Models Benchmarked:**
+   - `LogisticRegression` (Champion: 81.4% Accuracy, 0.834 ROC-AUC)
    - `K-Nearest Neighbors`
    - `Decision Tree Classifier`
    - `Random Forest Classifier`
@@ -27,19 +27,17 @@ This repository houses an end-to-end industrial machine learning system built st
    - `Linear Discriminant Analysis (LDA)`
    - `Quadratic Discriminant Analysis (QDA)`
    - **Stacking Meta-Ensemble** (Combining top tree models + linear estimators into a Logistic Regression Meta-Learner)
-   - **Soft Voting Ensemble** (Weighted consensus probability model)
 
 3. **Unsupervised Clustering:**
    - `K-Means` customer persona segmentation embedded into the dataset for cohort targeting.
 
-4. **Production Web Application (Streamlit):**
+4. **Interactive Web Application (Streamlit):**
    - Real-time single-customer diagnostic simulator with adjustable decision alert thresholds.
    - Batch CSV file inference with enriched probability tagging and export.
    - Interactive diagnostic tabs: Model comparison, ROC curves, confusion matrix, feature importances, and exploratory clustering.
 
 5. **Deployment Ready:**
-   - Streamlit Community Cloud.
-   - Docker & Docker-Compose production setup.
+   - Docker & Docker-Compose multi-container setup.
    - GitHub Actions automated CI/CD pipeline for build and artifact testing.
 
 ---
@@ -47,18 +45,14 @@ This repository houses an end-to-end industrial machine learning system built st
 ## 🚀 Quickstart & Local Setup
 
 ```bash
-# 1. Unzip the project folder
-unzip production_ml_system.zip
-cd production_ml_system
-
-# 2. Setup virtual environment
+# 1. Setup virtual environment
 python -m venv venv
-source venv/bin/activate # Windows: venv\Scripts\activate
+source venv/bin/activate # Windows: .\venv\Scripts\activate
 
-# 3. Install dependencies
+# 2. Install dependencies
 pip install -r requirements.txt
 
-# 4. Launch Streamlit Platform
+# 3. Launch Streamlit Platform
 streamlit run app.py
 ```
 
